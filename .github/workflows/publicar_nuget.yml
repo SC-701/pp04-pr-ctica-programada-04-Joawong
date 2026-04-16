@@ -1,4 +1,4 @@
-name: Publicar paquetes NuGet de Autorización
+name: Publicar paquetes NuGet de Autorizacion
 
 on:
   push:
