@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-    - 'Seguridad/Seguridad.MiddlewareAutorizacion/ ** '
+    - 'Seguridad/Seguridad.MiddlewareAutorizacion/**'
   workflow_dispatch:
 
 permissions:
@@ -19,22 +19,23 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Setup .NET 8
-        uses: actions/setup-dotnet@v4
-        with:
-        dotnet-version: '8.0'
+          uses: actions/setup-dotnet@v4
+          with:
+          dotnet-version: '8.0'
 
       - name: Restaurar dependencias
         run: |
-        cd "Seguridad/Seguridad.MiddlewareAutorizacion"
-        dotnet restore
+          cd "Seguridad/Seguridad.MiddlewareAutorizacion"
+          dotnet restore
+
       - name: Compilar en Release
         run: |
-        cd "Seguridad/Seguridad.MiddlewareAutorizacion"
-        dotnet build -- configuration Release -- no-restore
+          cd "Seguridad/Seguridad.MiddlewareAutorizacion"
+          dotnet build -- configuration Release -- no-restore
 
       - name: Cleanup old .nupkg files
         run: |
-        rm -f Seguridad/Seguridad.MiddlewareAutorizacion/nupkgs/ *. nupkg
+          rm -f Seguridad/Seguridad.MiddlewareAutorizacion/nupkgs/ *. nupkg
 
       - name: Empaquetar (dotnet pack)
         run: |
