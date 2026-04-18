@@ -8,7 +8,7 @@
         <title>SC-701</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
+        <!-- Font Awesome icons (free version)--> 
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -32,6 +32,9 @@
                         <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Vehiculos">Vehiculos</a></li>
                     </ul>
+                    <div class="align-content-end navbar-nav text-uppercase">
+                        @await Html.PartialAsync("_AutenticacionParcial")
+                    </div>
                     <div class="align-content-end " collapse navbar-collapse text-uppercase ">
 
                     </div>

@@ -8,7 +8,7 @@ using System.Text.Json;
 
 namespace Web.Pages.Vehiculos
 {
-    [Authorize]
+    [Authorize(Roles = "2")]
     public class EliminarModel : PageModel
     {
         private IConfiguracion _configuracion;

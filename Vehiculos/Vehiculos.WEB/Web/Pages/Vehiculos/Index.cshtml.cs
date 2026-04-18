@@ -11,7 +11,7 @@ using Abstracciones.Modelos.Seguridad;
 
 namespace Web.Pages.Vehiculos
 {
-    [Authorize]
+    [Authorize(Roles ="1")]
     public class IndexModel : PageModel
     {
         private IConfiguracion _configuracion;

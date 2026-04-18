@@ -24,7 +24,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         options.LoginPath = "/Seguridad/Login";
         options.LogoutPath = "/Seguridad/Logout";
-        options.AccessDeniedPath = "/Seguridad/Acceso";
+        options.AccessDeniedPath = "/Seguridad/AccesoDenegado";
         options.ExpireTimeSpan = TimeSpan.FromMinutes(120);
     });
 
@@ -48,7 +48,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();    // ★ lee la cookie → llena HttpContext.User
-//app.AutorizacionClaims();   // ★ agrega claims de rol desde BD de seguridad
+app.AutorizacionClaims();   // ★ agrega claims de rol desde BD de seguridad
 app.UseAuthorization();     // ★ verifica [Authorize]
 
 
